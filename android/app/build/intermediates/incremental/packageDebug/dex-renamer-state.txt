@@ -1,0 +1,4 @@
+#Sun Oct 29 15:01:42 GFT 2017
+base.0=C\:\\react\\react-native\\auth\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=C\:\\react\\react-native\\auth\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

@@ -18,7 +18,7 @@ class LoginForm extends Component {
             .catch(() => {
                     firebase.auth().createUserWithEmailAndPassword(email, password)
                         .then(this.onLoginSucess.bind(this))
-                        .catch(this.onLoginFail.bind(this));
+                        .catch((error) => this.onLoginFail(error));
             });
     }
 
@@ -26,8 +26,11 @@ class LoginForm extends Component {
         console.log('make log out!');
     }
 
-    onLoginFail() {
-        this.setState({ error: 'Authentication Failed.', isLoading: false });
+    onLoginFail(err) {
+        if (err.code === 'auth/weak-password') {
+            return this.setState({ error: 'The password is too weak!', isLoading: false });
+        }
+        return this.setState({ error: 'Authentication Failed.', isLoading: false });
     }
 
     onLoginSucess() {
